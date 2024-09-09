@@ -38,7 +38,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
                                         @if (Session::has('error'))
-                                            <div class="alert alert-success alert-dismissible">
+                                            <div class="alert alert-danger alert-dismissible">
                                                 <button type="button" class="btn-close" data-bs-dismiss="alert"
                                                     aria-label="Close"></button>
 
@@ -47,7 +47,7 @@
                                             </div>
                                         @endif
                                         @if (Session::has('success'))
-                                            <div class="alert alert-danger alert-dismissible">
+                                            <div class="alert alert-success alert-dismissible">
                                                 <button type="button" class="btn-close" data-bs-dismiss="alert"
                                                     aria-label="Close"></button>
                                                 <h4><i class="icon fa fa-ban"></i> Alerta!</h4>

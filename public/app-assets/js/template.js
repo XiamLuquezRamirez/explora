@@ -1558,6 +1558,7 @@ function w3_close() {
 	var loader;
 
 	function loadNow(opacity) {
+   
 		if (opacity <= 0) {
 			displayContent();
 		} else {
@@ -1573,8 +1574,8 @@ function w3_close() {
 	}
 
 	document.addEventListener("DOMContentLoaded", function() {
-		loader = document.getElementById('loader');
-		loadNow(1);
+		// loader = document.getElementById('loader');
+		// loadNow(1);
 	});
 
 

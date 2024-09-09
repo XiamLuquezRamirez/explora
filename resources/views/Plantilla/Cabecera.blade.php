@@ -1,7 +1,7 @@
 <header class="main-header">
     <div class="d-flex align-items-center logo-box justify-content-start">
         <!-- Logo -->
-        <a href="index.html" class="logo">
+        <a href="{{ url('/Administracion') }}" class="logo">
             <!-- logo-->
             <div class="logo-mini w-40">
                 <span class="light-logo"><img src="{{ asset('app-assets/images/logo-letter.png') }}" alt="logo"></span>
@@ -26,6 +26,20 @@
                         data-toggle="push-menu" role="button">
                         <i data-feather="menu"></i>
                     </a>
+                </li>
+                <li  class="btn-group d-lg-inline-flex d-none">
+                    <div class="app-menu" id="divBusquedaGen">
+                        <div class="search-bx mx-5">
+                            <form>
+                                <div class="input-group">
+                                  <input type="search" id="busquedaGen" name="busquedaGen" class="form-control" placeholder="Buscar departamento">
+                                  <div class="input-group-append">
+                                    <button class="btn" type="button" id="button-addon3"><i class="icon-Search"><span class="path1"></span><span class="path2"></span></i></button>
+                                  </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>
