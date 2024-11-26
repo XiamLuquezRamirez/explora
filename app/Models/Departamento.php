@@ -60,76 +60,76 @@ class Departamento extends Model
     public static function busquedaHistoria($idDepartamento)
     {
         return DB::connection('mysql')->table('departamento_historia')
-            ->where("id", $idDepartamento)
+            ->where("departamento", $idDepartamento)
             ->first();
     }
     public static function busquedaGeografia($idDepartamento)
     {
         return DB::connection('mysql')->table('departamento_geografia')
-            ->where("id", $idDepartamento)
+            ->where("departamento", $idDepartamento)
             ->first();
     }
 
     public static function busquedaHidrografia($idDepartamento)
     {
         return DB::connection('mysql')->table('departamento_hidrografia')
-            ->where("id", $idDepartamento)
+            ->where("departamento", $idDepartamento)
             ->first();
     }
 
     public static function busquedaClima($idDepartamento)
     {
         return DB::connection('mysql')->table('departamento_clima')
-            ->where("id", $idDepartamento)
+            ->where("departamento", $idDepartamento)
             ->first();
     }
     public static function busquedaDemografia($idDepartamento)
     {
         return DB::connection('mysql')->table('departamento_demografia')
-            ->where("id", $idDepartamento)
+            ->where("departamento", $idDepartamento)
             ->first();
     }
     public static function busquedaEtnografia($idDepartamento)
     {
         return DB::connection('mysql')->table('departamento_etnografia')
-            ->where("id", $idDepartamento)
+            ->where("departamento", $idDepartamento)
             ->first();
     }
     public static function busquedaFaunaFlora($idDepartamento)
     {
         return DB::connection('mysql')->table('departamento_fauna_flora')
-            ->where("id", $idDepartamento)
+            ->where("departamento", $idDepartamento)
             ->first();
     }
     public static function busquedaEconomia($idDepartamento)
     {
         return DB::connection('mysql')->table('departamento_economia')
-            ->where("id", $idDepartamento)
+            ->where("departamento", $idDepartamento)
             ->first();
     }
     public static function busquedaCultura($idDepartamento)
     {
         return DB::connection('mysql')->table('departamento_cultura')
-            ->where("id", $idDepartamento)
+            ->where("departamento", $idDepartamento)
             ->first();
     }
 
     public static function busquedaGastronomia($idDepartamento)
     {
         return DB::connection('mysql')->table('departamento_gastronomia')
-            ->where("id", $idDepartamento)
+            ->where("departamento", $idDepartamento)
             ->first();
     }
     public static function busquedaCapital($idDepartamento)
     {
         return DB::connection('mysql')->table('departamento_capital')
-            ->where("id", $idDepartamento)
+            ->where("departamento", $idDepartamento)
             ->first();
     }
     public static function busquedaReferencia($idDepartamento)
     {
         return DB::connection('mysql')->table('departamento_referencia')
-            ->where("id", $idDepartamento)
+            ->where("departamento", $idDepartamento)
             ->first();
     }
 
@@ -137,6 +137,18 @@ class Departamento extends Model
     {
         return DB::connection('mysql')->table('departamento_sitios_list')
             ->where("id", $idSitio)
+            ->first();
+    }
+    public static function busquedaFauna($idFauna)
+    {
+        return DB::connection('mysql')->table('departamento_fauna_list')
+            ->where("id", $idFauna)
+            ->first();
+    }
+    public static function busquedaFlora($idFlora)
+    {
+        return DB::connection('mysql')->table('departamento_flora_list')
+            ->where("id", $idFlora)
             ->first();
     }
     public static function busquedaPersonaje($idPersonaje)
@@ -161,6 +173,14 @@ class Departamento extends Model
                 ->get();
         } else if ($request['idform'] == 'personajes') {
             return DB::connection('mysql')->table('departamento_personaje_list')
+                ->where("departamento", $request['idDepartamento'])
+                ->get();
+        } else if ($request['idform'] == 'fauna') {
+            return DB::connection('mysql')->table('departamento_fauna_list')
+                ->where("departamento", $request['idDepartamento'])
+                ->get();
+        } else if ($request['idform'] == 'flora') {
+            return DB::connection('mysql')->table('departamento_flora_list')
                 ->where("departamento", $request['idDepartamento'])
                 ->get();
         }
@@ -633,7 +653,7 @@ class Departamento extends Model
                     ]);
 
                     $verfal = $request['checkVerFal'][0];
-                    $respuesta = DB::connection('mysql')->table('preguntas')->insert([
+                    $respuesta = DB::connection('mysql')->table('opciones_verfal')->insert([
                         'pregunta' => $pregunta,
                         'respuesta' => $verfal
                     ]);
@@ -748,6 +768,67 @@ class Departamento extends Model
         }
         return  $respuesta;
     }
+    public static function GuardarFauna($request)
+    {
+        try {
+
+            if ($request['accFauna'] == 'guardar') {
+                $respuesta = DB::connection('mysql')->table('departamento_fauna_list')->insertGetId([
+                    'departamento' => $request['idDepartamento'],
+                    'nombre' => $request['nombreFauna'],
+                    'contenido' => $request['contenidoFaunaList'],
+                    'destacada' => $request['destacada']
+                ]);
+            } else {
+                $respuesta = DB::connection('mysql')->table('departamento_fauna_list')
+                    ->where('id', $request['idFauna'])  // Asegúrate de tener una condición adecuada para identificar el registro a actualizar
+                    ->update([
+                        'nombre' => $request['nombreFauna'],
+                        'contenido' => $request['contenidoFaunaList'],
+                        'destacada' => $request['destacada']
+                    ]);
+
+                $respuesta = $request['idFauna'];
+            }
+        } catch (Exception $e) {
+            // Manejo del error
+            return response()->json([
+                'success' => false,
+                'message' => 'Ocurrió un error al procesar el formulario: ' . $e->getMessage(),
+            ], 500);
+        }
+        return  $respuesta;
+    }
+    public static function GuardarFlora($request)
+    {
+        try {
+            if ($request['accFlora'] == 'guardar') {
+                $respuesta = DB::connection('mysql')->table('departamento_flora_list')->insertGetId([
+                    'departamento' => $request['idDepartamento'],
+                    'nombre' => $request['nombreFlora'],
+                    'contenido' => $request['contenidoFloraList'],
+                    'destacada' => $request['destacada']
+                ]);
+            } else {
+                $respuesta = DB::connection('mysql')->table('departamento_flora_list')
+                    ->where('id', $request['idFlora'])  // Asegúrate de tener una condición adecuada para identificar el registro a actualizar
+                    ->update([
+                        'nombre' => $request['nombreFlora'],
+                        'contenido' => $request['contenidoFloraList'],
+                        'destacada' => $request['destacada']
+                    ]);
+
+                $respuesta = $request['idFlora'];
+            }
+        } catch (Exception $e) {
+            // Manejo del error
+            return response()->json([
+                'success' => false,
+                'message' => 'Ocurrió un error al procesar el formulario: ' . $e->getMessage(),
+            ], 500);
+        }
+        return  $respuesta;
+    }
     public static function GuardarPersonaje($request)
     {
         try {
@@ -789,7 +870,7 @@ class Departamento extends Model
 
     public static function eliminarFestividad($id)
     {
-        return DB::connection('mysql')->table('departamento_etnografia_list')
+        return DB::connection('mysql')->table('departamento_festividad_list')
             ->where('id', $id)
             ->delete();
     }
@@ -797,6 +878,18 @@ class Departamento extends Model
     public static function eliminarSitio($id)
     {
         return DB::connection('mysql')->table('departamento_sitios_list')
+            ->where('id', $id)
+            ->delete();
+    }
+    public static function eliminarFauna($id)
+    {
+        return DB::connection('mysql')->table('departamento_fauna_list')
+            ->where('id', $id)
+            ->delete();
+    }
+    public static function eliminarFlora($id)
+    {
+        return DB::connection('mysql')->table('departamento_flora_list')
             ->where('id', $id)
             ->delete();
     }

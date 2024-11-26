@@ -10,7 +10,7 @@
                     </div>
                 </div>
                 <div class="row" id="regDepartamentos">
-                    
+
                 </div>
                 <div id="pagination-links" class="text-center ml-1 mt-2">
 
@@ -186,7 +186,8 @@
             <div class="card bg-primary-light">
                 <div class="card-header">
                     <h4 class="card-title" id="nombreDepartamento">Departamento de Casanares</h4>
-                    <a onclick="mostarDepartamentos();" class="btn btn-primary"><i class="fa fa-mail-reply-all me-10"></i> Atras</a>
+                    <a onclick="mostarDepartamentos();" class="btn btn-primary"><i
+                            class="fa fa-mail-reply-all me-10"></i> Atras</a>
                 </div>
             </div>
             <div class="row">
@@ -195,8 +196,8 @@
                         <div class="box-body">
                             <ul class="nav nav-pills file-nav d-block">
                                 <li class="nav-item">
-                                    <a class="nav-link active rounded nav-linkMenu" style="cursor: pointer;" id="liDescripcion"
-                                        onclick="habilitarVista(this);">
+                                    <a class="nav-link active rounded nav-linkMenu" style="cursor: pointer;"
+                                        id="liDescripcion" onclick="habilitarVista(this);">
                                         <i class="fs-18 me-10 fa fa-fw fa-list-alt"></i>
                                         <span class="fs-18 mt-2">Descripción</span>
                                     </a>
@@ -279,8 +280,8 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link rounded nav-linkMenu" style="cursor: pointer;" id="liSitiosInteres"
-                                        onclick="habilitarVista(this);">
+                                    <a class="nav-link rounded nav-linkMenu" style="cursor: pointer;"
+                                        id="liSitiosInteres" onclick="habilitarVista(this);">
                                         <i class="fs-18 me-10 fa fa-thumb-tack"></i>
                                         <span class="fs-18 mt-2">Sitios de interés</span>
                                     </a>
@@ -377,18 +378,18 @@
                         </div>
                         <div class="card-body">
                             <div id="contUbi">
-                                <h5 class="card-title fw-600">Ubicación.</h5>
+                                {{-- <h5 class="card-title fw-600">.</h5> --}}
                                 <div id="desUbicacion"></div>
                             </div>
-                            <div id="contCoord">
+                            <div style="display: none;" id="contCoord">
                                 <h5 class="card-title fw-600">Coordenadas.</h5>
                                 <div id="desCoordenadas"></div>
                             </div>
-                            <div id="contLimi">
+                            <div style="display: none;" id="contLimi">
                                 <h5 class="card-title fw-600">Limites.</h5>
                                 <div id="desLimites"></div>
                             </div>
-                            <div id="contReli">
+                            <div style="display: none;" id="contReli">
                                 <h5 class="card-title fw-600">Relieve.</h5>
                                 <div id="desRelieve"></div>
                             </div>
@@ -421,18 +422,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div id="contPobla">
-                                <h5 class="card-title fw-600">Población.</h5>
-                                <div id="desPoblacion"></div>
-                            </div>
-                            <div id="contDens">
-                                <h5 class="card-title fw-600">Densidad.</h5>
-                                <div id="desDensidad"></div>
-                            </div>
-                            <div id="contSubreg">
-                                <h5 class="card-title fw-600">Subregiones.</h5>
-                                <div id="desSubregiones"></div>
-                            </div>
+                            <div id="desPoblacion"></div>
                         </div>
                     </div>
                     <div class="card vista" id="Etnografia">
@@ -445,12 +435,12 @@
                             <div id="desEtnografia"></div>
                             <div class="tab-pane show active" id="justified-tabs-preview">
                                 <ul class="nav nav-pills bg-nav-pills nav-justified mb-3" id="navEtnias">
-                                    
-                                   
+
+
                                 </ul>
 
                                 <div class="tab-content px-20" id="contNavEtnias">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -463,11 +453,34 @@
                             </div>
                         </div>
                         <div class="card-body">
-                                <h5 class="card-title fw-600">Fauna.</h5>
-                                <div id="desFauna"></div>
-                            
-                                <h5 class="card-title fw-600">Flora.</h5>
-                                <div id="desFlora"></div>                            
+                            <h5 class="card-title fw-600">Fauna.</h5>
+                            <div id="desFauna">
+
+                            </div>
+                            <div id="tabFauna">
+                                <div class="tab-pane show active" id="justified-tabs-preview">
+                                    <ul class="nav nav-pills bg-nav-pills nav-justified mb-3" id="navFauna">
+
+                                    </ul>
+                                    <div class="tab-content px-20" id="contNavFauna">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="m-4">
+                            <h5 class="card-title fw-600">Flora.</h5>
+                            <div id="desFlora">
+                            </div>
+                            <div id="tabFlora">
+                                <div class="tab-pane show active" id="justified-tabs-preview">
+                                    <ul class="nav nav-pills bg-nav-pills nav-justified mb-3" id="navFlora">
+
+                                    </ul>
+                                    <div class="tab-content px-20" id="contNavFlora">
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card vista" id="Economia">
@@ -477,7 +490,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div id="desEconomia"></div> 
+                            <div id="desEconomia"></div>
                         </div>
                     </div>
                     <div class="card vista" id="Cultura">
@@ -491,15 +504,15 @@
                                 <h5 class="card-title fw-600">Descripción.</h5>
                                 <div id="desCultura"></div>
                             </div>
-                            <div id="contArte">
+                            <div id="contArte" style="display: none;">
                                 <h5 class="card-title fw-600">Arte.</h5>
                                 <div id="desArte"></div>
                             </div>
-                            <div id="contDanza">
+                            <div id="contDanza" style="display: none;">
                                 <h5 class="card-title fw-600">Danza.</h5>
                                 <div id="desDanza"></div>
                             </div>
-                            <div id="contMusica">
+                            <div id="contMusica" style="display: none;">
                                 <h5 class="card-title fw-600">Música.</h5>
                                 <div id="desMusica"></div>
                             </div>
@@ -512,7 +525,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div  id="desGastronomia"></div>
+                            <div id="desGastronomia"></div>
                         </div>
                     </div>
                     <div class="card vista" id="Festividades">
@@ -524,12 +537,12 @@
                         <div class="card-body">
                             <div class="tab-pane show active" id="justified-tabs-preview">
                                 <ul class="nav nav-pills bg-nav-pills nav-justified mb-3" id="navFestividad">
-                                    
-                                   
+
+
                                 </ul>
 
                                 <div class="tab-content px-20" id="contNavFestividad">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -602,7 +615,7 @@
                 }
             });
 
-           
+
             // Evento input para el campo de búsqueda
             document.getElementById('busquedaGen').addEventListener('input', async function() {
                 var searchTerm = this.value;
@@ -614,21 +627,23 @@
         });
 
         function agregarClase() {
-            const div = document.querySelector('.bounce');
+            const divs = document.querySelectorAll('.bounce');
 
-            div.addEventListener('mouseover', () => {
-                div.classList.add('box-outline-primary');
-            });
+            divs.forEach(div => {
+                div.addEventListener('mouseover', () => {
+                    div.classList.add('box-outline-primary');
+                });
 
-            div.addEventListener('mouseout', () => {
-                div.classList.remove('box-outline-primary');
+                div.addEventListener('mouseout', () => {
+                    div.classList.remove('box-outline-primary');
+                });
             });
         }
 
         async function cargarListaDepartamentos(page, searchTerm = '') {
             let url = "{{ route('departametos.VisualizacionDepartamentos') }}"; // Definir la URL
 
-            loader = document.getElementById('loader');           
+            loader = document.getElementById('loader');
             loadNow(1);
 
             // Eliminar los campos ocultos anteriores
@@ -667,7 +682,7 @@
             }
         }
 
-        
+
 
         function habilitarVista(element) {
             const navLinks = document.querySelectorAll('.nav-linkMenu');
@@ -681,10 +696,10 @@
             });
 
             document.getElementById(idElement.slice(2)).style.display = 'block';
-            
+
         }
 
-        function mostarDepartamentos(){
+        function mostarDepartamentos() {
             document.getElementById("listDepartamentos").style.display = '';
             document.getElementById("divBusquedaGen").style.display = '';
             document.getElementById("detDepartamento").style.display = 'none';
@@ -724,7 +739,7 @@
                     })
                     .then(response => response.json())
                     .then(data => {
-                    
+
                         document.getElementById('nombreDepartamento').innerHTML =
                             `Departamento de ${data.nombreDepartamento.nombre}`
                         document.getElementById('descCapital').innerHTML = data.nombreDepartamento.capital
@@ -776,26 +791,11 @@
                         document.getElementById('desClima').innerHTML = data.clima.clima
 
                         //carga demografia
+                          console.log(data.demografia.poblacion)
                         if (data.demografia.poblacion) {
                             document.getElementById('desPoblacion').innerHTML = data.demografia.poblacion
-                            document.getElementById('contPobla').style.display = 'block'
-                        } else {
-                            document.getElementById('contPobla').style.display = 'none'
                         }
-
-                        if (data.demografia.densidad) {
-                            document.getElementById('desDensidad').innerHTML = data.demografia.densidad
-                            document.getElementById('contDens').style.display = 'block'
-                        } else {
-                            document.getElementById('contDens').style.display = 'none'
-                        }
-
-                        if (data.demografia.subregiones) {
-                            document.getElementById('desSubregiones').innerHTML = data.demografia.subregiones
-                            document.getElementById('contSubreg').style.display = 'block'
-                        } else {
-                            document.getElementById('contSubreg').style.display = 'none'
-                        }
+                    
 
                         //cargar etnografia
                         document.getElementById('desEtnografia').innerHTML = data.etnografia.contenido
@@ -804,8 +804,10 @@
 
                         //cargar flora y fauna
                         document.getElementById('desFauna').innerHTML = data.faunaFlora.fauna
-                        document.getElementById('desFlora').innerHTML = data.faunaFlora.flora
+                        buscarLista('flora', idDepartamento);
 
+                        document.getElementById('desFlora').innerHTML = data.faunaFlora.flora
+                        buscarLista('fauna', idDepartamento);
                         //cargar economia
                         document.getElementById('desEconomia').innerHTML = data.economia.economia
 
@@ -824,7 +826,7 @@
                         } else {
                             document.getElementById('contArte').style.display = 'none'
                         }
-                        
+
                         if (data.cultura.danza) {
                             document.getElementById('desDanza').innerHTML = data.cultura.danza
                             document.getElementById('contDanza').style.display = 'block'
@@ -885,7 +887,7 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                   
+
                     if (idform == "etnografia") {
                         let navEtnias = '';
                         let active = "active";
@@ -988,6 +990,55 @@
 
                         document.getElementById('navPersonajes').innerHTML = navPersonajes;
                         document.getElementById('contNavPersonajes').innerHTML = contNavPersonajes;
+
+                    } else if (idform == "fauna") {
+                        let navFauna = '';
+                        let active = "active";
+                        data.forEach(fauna => {
+                            navFauna += `<li class="nav-item">
+                                        <a href="#fauna${fauna.id}" data-bs-toggle="tab" aria-expanded="false"
+                                            class="nav-link rounded-0 ${active}">
+                                            <span class="d-none d-md-block">${fauna.nombre}</span>
+                                        </a>
+                                    </li>`;
+                            active = "";
+                        });
+
+                        active = "active";
+                        let contNavFauna = '';
+                        data.forEach(fauna => {
+                            contNavFauna += `<div class="tab-pane ${active}" id="fauna${fauna.id}">
+                                     ${fauna.contenido}
+                                    </div>`;
+                            active = "";
+                        });
+
+                        document.getElementById('navFauna').innerHTML = navFauna;
+                        document.getElementById('contNavFauna').innerHTML = contNavFauna;
+                    } else if (idform == "flora") {
+                        let navFlora = '';
+                        let active = "active";
+                        data.forEach(flora => {
+                            navFlora += `<li class="nav-item">
+                                        <a href="#flora${flora.id}" data-bs-toggle="tab" aria-expanded="false"
+                                            class="nav-link rounded-0 ${active}">
+                                            <span class="d-none d-md-block">${flora.nombre}</span>
+                                        </a>
+                                    </li>`;
+                            active = "";
+                        });
+
+                        active = "active";
+                        let contNavFlora = '';
+                        data.forEach(flora => {
+                            contNavFlora += `<div class="tab-pane ${active}" id="flora${flora.id}">
+                                     ${flora.contenido}
+                                    </div>`;
+                            active = "";
+                        });
+
+                        document.getElementById('navFlora').innerHTML = navFlora;
+                        document.getElementById('contNavFlora').innerHTML = contNavFlora;
 
                     }
                     // Recargar los íconos de feather

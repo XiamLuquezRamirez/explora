@@ -14,7 +14,6 @@
                                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
                             </svg>
                             <span>Inicio</span>
-
                         </a>
                     </li>
                     <li id="principalDepartamento" class="treeview">
@@ -27,7 +26,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li>
-                            <li id="principalDepartamentoGestionar"> 
+                            <li id="principalDepartamentoGestionar">
                                 <a href="{{ url('/AdminDepartamento/Gestionar') }}">
                                     <i class="icon-Commit"><span class="path1"></span><span
                                             class="path2"></span></i>Gestionar
@@ -65,7 +64,7 @@
 
                     </ul>
                 </li>
-                <li class="treeview">
+                <li id="principalUsuarios" class="treeview">
                     <a href="#">
                         <i data-feather="users"></i>
                         <span>Usuarios</span>
@@ -74,8 +73,8 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="treeview">
-                            <a href="#">
+                        <li id="principalUsuarioGestionar">
+                            <a href="{{ url('/AdminUsuario/Gestionar') }}">
                                 <i class="icon-Commit"><span class="path1"></span><span
                                         class="path2"></span></i>Gestionar
                             </a>
@@ -83,7 +82,6 @@
                     </ul>
                 </li>
                 </ul>
-
                 <div class="sidebar-widgets">
                     <div class="mx-25 mb-30 pb-20 side-bx bg-primary-light rounded20">
                         <div class="text-center">

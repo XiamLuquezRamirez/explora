@@ -3,7 +3,7 @@
 
 @include('Plantilla.Head')
 
-<body class="hold-transition light-skin sidebar-mini theme-primary fixed">
+<body class="layout-top-nav light-skin theme-primary fixed">
 
     <div class="wrapper">
         <div id="loader"></div>

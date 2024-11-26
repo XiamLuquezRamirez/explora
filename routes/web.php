@@ -37,6 +37,8 @@ Route::post('/etnias/eliminar', [DepartamentoController::class, 'eliminarEtnias'
 Route::post('/festividad/guardar', [DepartamentoController::class, 'guardarFestividad'])->name('form.guardarFestividad');
 Route::post('/festividad/eliminar', [DepartamentoController::class, 'eliminarFestividad'])->name('festividad.eliminarFestividad');
 Route::post('/sitios/guardar', [DepartamentoController::class, 'guardarSitios'])->name('form.guardarSitio');
+Route::post('/fauna/guardar', [DepartamentoController::class, 'guardarFauna'])->name('form.guardarFauna');
+Route::post('/flora/guardar', [DepartamentoController::class, 'guardarFlora'])->name('form.guardarFlora');
 Route::post('/sitios/buscaSitios', [DepartamentoController::class, 'busquedaSitio'])->name('sitios.buscaSitios');
 Route::post('/sitios/eliminar', [DepartamentoController::class, 'eliminarSitio'])->name('sitio.eliminarSitio');
 Route::post('/personajes/guardar', [DepartamentoController::class, 'guardarPersonaje'])->name('form.guardarPersonaje');
@@ -44,7 +46,10 @@ Route::post('/personajes/buscaPersonajes', [DepartamentoController::class, 'busq
 Route::post('/personajes/eliminar', [DepartamentoController::class, 'eliminarPersonaje'])->name('personajes.eliminarPersonaje');
 Route::post('/departamento/eliminar', [DepartamentoController::class, 'eliminarDepartamento'])->name('departamento.eliminarDepartamento');
 Route::post('/departamentos/buscaDepartamento', [DepartamentoController::class, 'busquedaDepartamento'])->name('departamento.buscaDepartamentos');
-
+Route::post('/fauna/buscaFauna', [DepartamentoController::class, 'busquedaFauna'])->name('fauna.buscaFauna');
+Route::post('/fauna/eliminar', [DepartamentoController::class, 'eliminarFauna'])->name('fauna.eliminarFauna');
+Route::post('/flora/buscaFlora', [DepartamentoController::class, 'busquedaFlora'])->name('flora.buscaFlora');
+Route::post('/flora/eliminar', [DepartamentoController::class, 'eliminarFlora'])->name('flora.eliminarFlora');
 
 //PREGUNTAS
 Route::post('/preguntas/guardar', [DepartamentoController::class, 'guardarPreguntas'])->name('form.guardarPregunta');
@@ -53,3 +58,10 @@ Route::post('/preguntas/busq', [DepartamentoController::class, 'busquedaPregunta
 Route::post('/preguntas/eliminar', [DepartamentoController::class, 'eliminarPreguntas'])->name('preguntas.eliminarPregunta');
 
 
+//GESTIONAR USUARIOS
+Route::post('/AdminUsuario/listaUsuarios', [UsuariosController::class, 'listaUsuarios'])->name('usuarios.listaUsuarios');
+Route::get('/AdminUsuario/Gestionar', [UsuariosController::class,'Usuarios']);
+Route::post('/verificar-usuario', [UsuariosController::class, 'verificarUsuario']);
+Route::post('/AdminUsuario/guardar', [UsuariosController::class, 'guardarUsuario'])->name('form.guardarUsusario');
+Route::post('/AdminUsuario/buscaUsuario', [UsuariosController::class, 'busquedaUsuario'])->name('usuario.buscaUsuario');
+Route::post('/AdminUsuario/eliminarUsuario', [UsuariosController::class, 'eliminarUsuario'])->name('usuario.eliminarUsuario');

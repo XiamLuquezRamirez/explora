@@ -141,6 +141,7 @@
                                                 <select class="form-select" id="clima" name="clima">
                                                     <option value="">Seleccione...</option>
                                                     <option value="húmedo">Clima tropical húmedo</option>
+                                                    <option value="calido">Clima tropical Calido</option>
                                                     <option value="seco">Clima seco</option>
                                                     <option value="templado">Clima templado</option>
                                                     <option value="montaña">Clima de montaña</option>
@@ -269,13 +270,14 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="contenidoUbicacion" class="form-label">Ubicación:</label>
+                                                <label style="display: none;" for="contenidoUbicacion"
+                                                    class="form-label">Ubicación:</label>
                                                 <textarea id="contenidoUbicacion" name="contenidoUbicacion" rows="10" cols="80">
                                             </textarea>
                                             </div>
 
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-12" style="display: none;">
                                             <div class="form-group">
                                                 <label for="contenidoCoordenadas" class="form-label">Coordenadas :</label>
                                                 <textarea id="contenidoCoordenadas" name="contenidoCoordenadas" rows="10" cols="80">
@@ -284,7 +286,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-12" style="display: none;">
                                             <div class="form-group">
                                                 <label for="contenidoLimites" class="form-label">Límites :</label>
                                                 <textarea id="contenidoLimites" name="contenidoLimites" rows="10" cols="80">
@@ -293,7 +295,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-12" style="display: none;">
                                             <div class="form-group">
                                                 <label for="contenidoRelieve" class="form-label">Relieve :</label>
                                                 <textarea id="contenidoRelieve" name="contenidoRelieve" rows="10" cols="80">
@@ -329,8 +331,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <textarea id="contenidoClima" name="contenidoClima" rows="10" cols="80">
-                                                
-                                        </textarea>
+                                            </textarea>
                                         </div>
                                     </div>
                                 </form>
@@ -340,36 +341,28 @@
                             <section>
                                 <form id="demografia">
                                     <input type="hidden" name="idDemografia" id="idDemografia" value="" />
-
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="contenidoPoblacion" class="form-label">Población :</label>
+                                                {{-- <label for="contenidoPoblacion" class="form-label">Población :</label> --}}
                                                 <textarea id="contenidoPoblacion" name="contenidoPoblacion" rows="10" cols="80">
-                                                
-                                            </textarea>
+                                                </textarea>
                                             </div>
-
                                         </div>
-                                        <div class="col-md-12">
+                                        <div style="display: none;" class="col-md-12">
                                             <div class="form-group">
                                                 <label for="contenidoDensidad" class="form-label">Densidad :</label>
                                                 <textarea id="contenidoDensidad" name="contenidoDensidad" rows="10" cols="80">
-                                                
-                                            </textarea>
+                                                </textarea>
                                             </div>
-
                                         </div>
-                                        <div class="col-md-12">
+                                        <div style="display: none;" class="col-md-12">
                                             <div class="form-group">
                                                 <label for="contenidoSubregiones" class="form-label">Subregiones :</label>
                                                 <textarea id="contenidoSubregiones" name="contenidoSubregiones" rows="10" cols="80">
-                                                
-                                            </textarea>
+                                                </textarea>
                                             </div>
-
                                         </div>
-
                                     </div>
                                 </form>
                             </section>
@@ -378,14 +371,12 @@
                             <section>
                                 <form id="etnografia">
                                     <input type="hidden" name="idEtnografia" id="idEtnografia" value="" />
-
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="contenidoEtnoHistoria" class="form-label">Historia :</label>
                                                 <textarea id="contenidoEtnoHistoria" name="contenidoEtnoHistoria" rows="10" cols="80">
-                                                
-                                            </textarea>
+                                                </textarea>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -419,24 +410,91 @@
                             <section>
                                 <form id="faunaflora">
                                     <input type="hidden" name="idFauFlora" id="idFauFlora" value="" />
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="contenidoFauna" class="form-label">Fauna :</label>
-                                                <textarea id="contenidoFauna" name="contenidoFauna" rows="10" cols="80">
-                                                  
-                                              </textarea>
+                                    <div class="tab-content">
+                                        <div class="tab-pane show active" id="bordered-justified-tabs-preview">
+                                            <ul class="nav nav-tabs nav-justified nav-bordered mb-3">
+
+                                                <li class="nav-item">
+                                                    <a href="#Fauna-b2" data-bs-toggle="tab" aria-expanded="false"
+                                                        class="nav-link active">
+                                                        <span class="d-none d-md-block"><i class="fa fa-paw"></i>
+                                                            Fauna</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#Flora-b2" data-bs-toggle="tab" aria-expanded="false"
+                                                        class="nav-link">
+                                                        <span class="d-none d-md-block"><i class="fa fa-leaf"></i>
+                                                            Flora</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content px-20">
+                                                <div class="tab-pane  show active" id="Fauna-b2">
+                                                    <label for="contenidoFauna" class="form-label">Fauna :</label>
+                                                    <textarea id="contenidoFauna" name="contenidoFauna" rows="10" cols="80">
+                                                  </textarea>
+                                                    <div class="row mt-4">
+                                                        <h4 class="header-title">Listado de fauna.</h4>
+                                                        <div class="col-md-2 offset-md-10" style="text-align: right;">
+                                                            <button type="button" id="openModalEtnias"
+                                                                onclick="openModalFauna();"
+                                                                class="waves-effect waves-light btn btn-primary mb-5"><i
+                                                                    class="fa fa-plus"></i>
+                                                                Agregar</button>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <table id="tableFauna" class="table table-striped">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th style="width:35%;">Nombre</th>
+                                                                        <th style="width:10%;">Acción</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane" id="Flora-b2">
+                                                    <label for="contenidoFlora" class="form-label">Flora :</label>
+                                                    <textarea id="contenidoFlora" name="contenidoFlora" rows="10" cols="80">
+                                                    </textarea>
+                                                    <div class="row mt-4">
+                                                        <h4 class="header-title">Listado de flora.</h4>
+                                                        <div class="col-md-2 offset-md-10" style="text-align: right;">
+                                                            <button type="button" id="openModalEtnias"
+                                                                onclick="openModalFlora();"
+                                                                class="waves-effect waves-light btn btn-primary mb-5"><i
+                                                                    class="fa fa-plus"></i>
+                                                                Agregar</button>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <table id="tableFlora" class="table table-striped">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th style="width:35%;">Nombre</th>
+                                                                        <th style="width:10%;">Acción</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="contenidoFlora" class="form-label">Flora :</label>
-                                                <textarea id="contenidoFlora" name="contenidoFlora" rows="10" cols="80">
-                                                  
-                                              </textarea>
-                                            </div>
-                                        </div>
+                                        </div> <!-- end preview-->
+
+                                        <div class="tab-pane" id="bordered-justified-tabs-code">
+                                            <pre class="mb-0">
+                                          
+                                        </pre> <!-- end highlight-->
+                                        </div> <!-- end preview code-->
                                     </div>
+
+
                                 </form>
                             </section>
                             <!-- Step 9 -->
@@ -467,14 +525,15 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="contenidoCultura" class="form-label">Descripción :</label>
+                                                <label for="contenidoCultura" style="display: none;"
+                                                    class="form-label">Descripción :</label>
                                                 <textarea id="contenidoCultura" name="contenidoCultura" rows="10" cols="80">
                                                   
                                               </textarea>
                                             </div>
 
                                         </div>
-                                        <div class="col-md-12">
+                                        <div style="display: none;" class="col-md-12">
                                             <div class="form-group">
                                                 <label for="contenidoArte" class="form-label">Arte :</label>
                                                 <textarea id="contenidoArte" name="contenidoArte" rows="10" cols="80">
@@ -483,7 +542,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="col-md-12">
+                                        <div style="display: none;" class="col-md-12">
                                             <div class="form-group">
                                                 <label for="contenidoDanza" class="form-label">Danza :</label>
                                                 <textarea id="contenidoDanza" name="contenidoDanza" rows="10" cols="80">
@@ -492,7 +551,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="col-md-12">
+                                        <div style="display: none;" class="col-md-12">
                                             <div class="form-group">
                                                 <label for="contenidoMusica" class="form-label">Música :</label>
                                                 <textarea id="contenidoMusica" name="contenidoMusica" rows="10" cols="80">
@@ -842,6 +901,120 @@
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
     </div><!-- /.modal -->
+    <!-- MODAL FAUNA -->
+    <div class="modal fade" id="modalFauna" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myLargeModalLabel">Agregar fauna</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formFauna">
+                        <input type="hidden" name="accFauna" id="accFauna" value="guardar" />
+                        <input type="hidden" name="idFauna" id="idFauna" value="" />
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="nombreFauna" class="form-label">Nombre :</label>
+                                    <input type="text" class="form-control" id="nombreFauna" name="nombreFauna">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="faunaDestacado" class="form-label">Marcar como destacado :</label>
+                                <br>
+                                <label class="switch switch-border switch-primary">
+                                    <input type="checkbox" id="faunaDestacado" name="faunaDestacado">
+                                    <span class="switch-indicator"></span>
+                                    <span class="switch-description"></span>
+                                </label>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="contenidoFaunaList" class="form-label">Contenido :</label>
+                                    <textarea id="contenidoFaunaList" name="contenidoFaunaList" rows="10" cols="80">
+
+                            </textarea>
+                                </div>
+                            </div>
+                            <div class="box-footer text-end">
+                                <button type="button" onclick="newFaunas();" style="display: none;" id="newFauna"
+                                    class="btn btn-primary-light me-1">
+                                    <i class="ti-plus "></i> Nuevo
+                                </button>
+                                <button type="button" id="cancelFauna" onclick="cancelarFaunas();"
+                                    class="btn btn-primary-light me-1">
+                                    <i class="ti-close"></i> Cancelar
+                                </button>
+                                <button type="button" id="saveFauna" onclick="guardarFauna();" class="btn btn-primary">
+                                    <i class="ti-save"></i> Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div><!-- /.modal -->
+    <!-- MODAL FLORA -->
+    <div class="modal fade" id="modalFlora" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myLargeModalLabel">Agregar flora</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formFlora">
+                        <input type="hidden" name="accFlora" id="accFlora" value="guardar" />
+                        <input type="hidden" name="idFlora" id="idFlora" value="" />
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="nombreFlora" class="form-label">Nombre :</label>
+                                    <input type="text" class="form-control" id="nombreFlora" name="nombreFlora">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="floraDestacado" class="form-label">Marcar como destacado :</label>
+                                <br>
+                                <label class="switch switch-border switch-primary">
+                                    <input type="checkbox" id="floraDestacado" name="floraDestacado">
+                                    <span class="switch-indicator"></span>
+                                    <span class="switch-description"></span>
+                                </label>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="contenidoFloraList" class="form-label">Contenido :</label>
+                                    <textarea id="contenidoFloraList" name="contenidoFloraList" rows="10" cols="80">
+
+                            </textarea>
+                                </div>
+                            </div>
+                            <div class="box-footer text-end">
+                                <button type="button" onclick="newFloras();" style="display: none;" id="newFlora"
+                                    class="btn btn-primary-light me-1">
+                                    <i class="ti-plus "></i> Nuevo
+                                </button>
+                                <button type="button" id="cancelFlora" onclick="cancelarFloras();"
+                                    class="btn btn-primary-light me-1">
+                                    <i class="ti-close"></i> Cancelar
+                                </button>
+                                <button type="button" id="saveFlora" onclick="guardarFlora();" class="btn btn-primary">
+                                    <i class="ti-save"></i> Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div><!-- /.modal -->
     <!-- MODAL PERSONAJES DESTACADOS -->
     <div class="modal fade" id="modalPersonajesDestacados" tabindex="-1" role="dialog"
         aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -918,7 +1091,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="clima" class="form-label">Tipo de pregunta :</label>
+                                    <label for="tipoPreg" class="form-label">Tipo de pregunta :</label>
                                     <select class="form-select" onchange="cambioPregunta(this.value);" id="tipoPreg"
                                         name="tipoPreg">
                                         <option value="">Seleccione...</option>
@@ -987,7 +1160,7 @@
                         </div>
 
                         <div class="box-footer text-end">
-                            <button type="button" onclick="newPregunta();" style="display: none;" id="newPregunta"
+                            <button type="button" onclick="newPreguntas();" style="display: none;" id="newPregunta"
                                 class="btn btn-primary-light me-1">
                                 <i class="ti-plus "></i> Nueva
                             </button>
@@ -1010,7 +1183,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             let menuP = document.getElementById("principalDepartamento");
             let menuS = document.getElementById("principalDepartamentoGestionar");
-
+            document.getElementById("divBusquedaGen").style.display = 'none';
             menuP.classList.add("active", "menu-open");
             menuS.classList.add("active");
 
@@ -1113,7 +1286,9 @@
                 'contenidoPersonajeDestacado',
                 'contenidoCapital',
                 'contenidoReferencia',
-                'contenidoWebgrafia'
+                'contenidoWebgrafia',
+                'contenidoFloraList',
+                'contenidoFaunaList'
             ];
 
             $(function() {
@@ -1341,6 +1516,26 @@
             modal.show();
         }
 
+        function openModalFauna() {
+            var modal = new bootstrap.Modal(document.getElementById("modalFauna"), {
+                backdrop: 'static',
+                keyboard: false
+            });
+
+            newFaunas();
+            modal.show();
+        }
+
+        function openModalFlora() {
+            var modal = new bootstrap.Modal(document.getElementById("modalFlora"), {
+                backdrop: 'static',
+                keyboard: false
+            });
+
+            newFloras();
+            modal.show();
+        }
+
         function openModalFestividad() {
             var modal = new bootstrap.Modal(document.getElementById("modalFestividades"), {
                 backdrop: 'static',
@@ -1369,6 +1564,45 @@
 
             newPersonajes();
             modal.show();
+        }
+
+        function newPreguntas() {
+            consOpcion = 0
+            document.getElementById("tipoPreg").value = ""
+            document.getElementById("contPregunta").value = ""
+            document.getElementById("preguntaVerfal").value = ""
+            document.getElementById("opcionesPreg").innerHTML = ""
+            addOpcion()
+            document.getElementById("multiple").style.display = "none"
+            document.getElementById("verfal").style.display = "none"
+
+            const checkboxes = document.getElementsByName('checkVerFal[]');
+            checkboxes.forEach(function(item) {
+                item.checked = false;
+            });
+
+            document.getElementById('savePregunta').removeAttribute('disabled')
+            document.getElementById('newPregunta').style.display = 'none'
+            document.getElementById('cancelPregunta').style.display = 'initial'
+        }
+
+        function cancelarPregunta() {
+            consOpcion = 0
+            document.getElementById("tipoPreg").value = ""
+            document.getElementById("contPregunta").value = ""
+            document.getElementById("preguntaVerfal").value = ""
+            document.getElementById("opcionesPreg").innerHTML = ""
+            document.getElementById("multiple").style.display = "none"
+            document.getElementById("verfal").style.display = "none"
+
+            const checkboxes = document.getElementsByName('checkVerFal[]');
+            checkboxes.forEach(function(item) {
+                item.checked = false;
+            });
+
+            document.getElementById('savePregunta').removeAttribute('disabled')
+            document.getElementById('newPregunta').style.display = 'none'
+            document.getElementById('cancelPregunta').style.display = 'initial'
         }
 
         function guardarFormulario(currentForm) {
@@ -1484,6 +1718,18 @@
             document.getElementById("nombreEtnia").value = ""
             document.getElementById("nombreEtniaAlterno").value = ""
             document.getElementById("etniaLengua").value = ""
+        }
+
+        function cancelarFaunas() {
+            CKEDITOR.instances['contenidoFaunaList'].setData('')
+            document.getElementById('faunaDestacado').checked = false
+            document.getElementById("nombreFauna").value = ""
+        }
+
+        function cancelarFloras() {
+            CKEDITOR.instances['contenidoFloraList'].setData('')
+            document.getElementById('floraDestacado').checked = false
+            document.getElementById("nombreFlora").value = ""
         }
 
         function cancelarFestividad() {
@@ -1657,6 +1903,106 @@
             }
         }
 
+        function guardarFauna() {
+            if ($("#formFauna").valid()) {
+                for (var instanceName in CKEDITOR.instances) {
+                    CKEDITOR.instances[instanceName].updateElement();
+                }
+
+                const formFauna = document.getElementById('formFauna');
+                const formData = new FormData(formFauna);
+
+                // Agrega un identificador único al formulario
+                let idDepartamento = document.getElementById('idDepartamento').value;
+                formData.append('idDepartamento', idDepartamento);
+                document.getElementById('faunaDestacado').checked ? formData.append('destacada', '1') : formData.append(
+                    'destacada', '0');
+
+                // Define la URL del backend
+                const url = "{{ route('form.guardarFauna') }}";
+
+                // Enviar los datos del formulario al backend usando fetch
+                fetch(url, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+
+                        if (data.success) {
+                            swal("¡Buen trabajo!",
+                                "La operación fue realizada exitosamente",
+                                "success");
+                            document.getElementById('saveFauna').setAttribute('disabled', 'disabled')
+                            document.getElementById('newFauna').style.display = 'initial';
+                            document.getElementById('cancelFauna').style.display = 'none';
+
+                            buscarLista('fauna', idDepartamento);
+                            document.getElementById("accFauna").value = "guardar"
+                        } else {
+                            console.error('Error en el procesamiento:', data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error al enviar los datos:", error);
+                    });
+
+            }
+        }
+
+        function guardarFlora() {
+            if ($("#formFlora").valid()) {
+                for (var instanceName in CKEDITOR.instances) {
+                    CKEDITOR.instances[instanceName].updateElement();
+                }
+
+                const formFlora = document.getElementById('formFlora');
+                const formData = new FormData(formFlora);
+
+                // Agrega un identificador único al formulario
+                let idDepartamento = document.getElementById('idDepartamento').value;
+                formData.append('idDepartamento', idDepartamento);
+                document.getElementById('floraDestacado').checked ? formData.append('destacada', '1') : formData.append(
+                    'destacada', '0');
+
+                // Define la URL del backend
+                const url = "{{ route('form.guardarFlora') }}";
+
+                // Enviar los datos del formulario al backend usando fetch
+                fetch(url, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+
+                        if (data.success) {
+                            swal("¡Buen trabajo!",
+                                "La operación fue realizada exitosamente",
+                                "success");
+                            document.getElementById('saveFlora').setAttribute('disabled', 'disabled')
+                            document.getElementById('newFlora').style.display = 'initial';
+                            document.getElementById('cancelFlora').style.display = 'none';
+
+                            buscarLista('flora', idDepartamento);
+                            document.getElementById("accFlora").value = "guardar"
+                        } else {
+                            console.error('Error en el procesamiento:', data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error al enviar los datos:", error);
+                    });
+
+            }
+        }
+
         function editPreg(idPreg) {
             var modal = new bootstrap.Modal(document.getElementById("modalPreguntas"), {
                 backdrop: 'static',
@@ -1713,13 +2059,13 @@
                     } else {
                         document.getElementById("preguntaVerfal").value = data.pregunta
 
-                       if(data.verFal == 1){
-                        document.getElementById("addon_CheckboxVerFal_1").checked= true
-                        document.getElementById("addon_CheckboxVerFal_0").checked= false
-                       }else{
-                        document.getElementById("addon_CheckboxVerFal_1").checked= false;
-                        document.getElementById("addon_CheckboxVerFal_0").checked= true;
-                       }
+                        if (data.verFal == 1) {
+                            document.getElementById("addon_CheckboxVerFal_1").checked = true
+                            document.getElementById("addon_CheckboxVerFal_0").checked = false
+                        } else {
+                            document.getElementById("addon_CheckboxVerFal_1").checked = false;
+                            document.getElementById("addon_CheckboxVerFal_0").checked = true;
+                        }
 
                         document.getElementById("multiple").style.display = "none";
                         document.getElementById("verfal").style.display = "block";
@@ -1749,7 +2095,8 @@
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
-                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                                    'content')
                             },
                             body: JSON.stringify({
                                 idPreg: id
@@ -1757,20 +2104,20 @@
                         })
                         .then(response => response.json())
                         .then(data => {
-                            if(data.success){
+                            if (data.success) {
                                 swal("¡Buen trabajo!",
-                                data.message,
-                                "success");
+                                    data.message,
+                                    "success");
                                 cargarPreguntasDepartamento();
-                            }else{
+                            } else {
                                 swal("¡Alerta!",
-                                "La operación fue realizada exitosamente",
-                                data.message,
-                                "success");
+                                    "La operación fue realizada exitosamente",
+                                    data.message,
+                                    "success");
                             }
                         })
 
-                    } else {
+                } else {
                     swal("Cancelado", "Tu registro esta salvo :)", "error");
                 }
             });
@@ -1795,7 +2142,8 @@
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
-                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                                    'content')
                             },
                             body: JSON.stringify({
                                 idDepar: id
@@ -1803,20 +2151,20 @@
                         })
                         .then(response => response.json())
                         .then(data => {
-                            if(data.success){
+                            if (data.success) {
                                 swal("¡Buen trabajo!",
-                                data.message,
-                                "success");
+                                    data.message,
+                                    "success");
                                 cargarListaDepartamentos();
-                            }else{
+                            } else {
                                 swal("¡Alerta!",
-                                "La operación fue realizada exitosamente",
-                                data.message,
-                                "success");
+                                    "La operación fue realizada exitosamente",
+                                    data.message,
+                                    "success");
                             }
                         })
 
-                    } else {
+                } else {
                     swal("Cancelado", "Tu registro esta salvo :)", "error");
                 }
             });
@@ -1878,6 +2226,24 @@
             document.getElementById('newEtnia').style.display = 'none'
             document.getElementById('cancelEtnias').style.display = 'initial'
             document.getElementById("accEtnias").value = "guardar"
+        }
+
+        function newFaunas() {
+            cancelarFaunas()
+
+            document.getElementById('saveFauna').removeAttribute('disabled')
+            document.getElementById('newFauna').style.display = 'none'
+            document.getElementById('cancelFauna').style.display = 'initial'
+            document.getElementById("accFauna").value = "guardar"
+        }
+
+        function newFloras() {
+            cancelarFloras()
+
+            document.getElementById('saveFlora').removeAttribute('disabled')
+            document.getElementById('newFlora').style.display = 'none'
+            document.getElementById('cancelFlora').style.display = 'initial'
+            document.getElementById("accFlora").value = "guardar"
         }
 
         function newFestividadades() {
@@ -2001,6 +2367,42 @@
                             tdAccion.innerHTML =
                                 `<a onclick="editPersonaje(${personaje.id});" style="cursor: pointer;" class="text-fade hover-primary"><i class="align-middle" data-feather="edit-2"></i></a>
                              <a onclick="deletePersonaje(${personaje.id});" style="cursor: pointer;" class="text-fade hover-primary"><i class="align-middle" data-feather="trash"></i></a>`;
+                            tr.appendChild(tdAccion);
+
+                            tbody.appendChild(tr);
+                        });
+                    } else if (idform == "fauna") {
+                        let tbody = document.querySelector('#tableFauna tbody');
+                        tbody.innerHTML = ''; // Limpiar la tabla antes de llenarla
+                        data.forEach(personaje => {
+                            let tr = document.createElement('tr');
+                            let tdNombre = document.createElement('td');
+                            tdNombre.textContent = personaje.nombre;
+                            tr.appendChild(tdNombre);
+
+                            let tdAccion = document.createElement('td');
+                            tdAccion.classList.add('table-action', 'min-w-100');
+                            tdAccion.innerHTML =
+                                `<a onclick="editFauna(${personaje.id});" style="cursor: pointer;" class="text-fade hover-primary"><i class="align-middle" data-feather="edit-2"></i></a>
+                             <a onclick="deleteFauna(${personaje.id});" style="cursor: pointer;" class="text-fade hover-primary"><i class="align-middle" data-feather="trash"></i></a>`;
+                            tr.appendChild(tdAccion);
+
+                            tbody.appendChild(tr);
+                        });
+                    } else if (idform == "flora") {
+                        let tbody = document.querySelector('#tableFlora tbody');
+                        tbody.innerHTML = ''; // Limpiar la tabla antes de llenarla
+                        data.forEach(personaje => {
+                            let tr = document.createElement('tr');
+                            let tdNombre = document.createElement('td');
+                            tdNombre.textContent = personaje.nombre;
+                            tr.appendChild(tdNombre);
+
+                            let tdAccion = document.createElement('td');
+                            tdAccion.classList.add('table-action', 'min-w-100');
+                            tdAccion.innerHTML =
+                                `<a onclick="editFlora(${personaje.id});" style="cursor: pointer;" class="text-fade hover-primary"><i class="align-middle" data-feather="edit-2"></i></a>
+                             <a onclick="deleteFlora(${personaje.id});" style="cursor: pointer;" class="text-fade hover-primary"><i class="align-middle" data-feather="trash"></i></a>`;
                             tr.appendChild(tdAccion);
 
                             tbody.appendChild(tr);
@@ -2131,6 +2533,88 @@
 
         }
 
+        function editFauna(idFauna) {
+            document.getElementById("idFauna").value = idFauna
+
+            var modal = new bootstrap.Modal(document.getElementById("modalFauna"), {
+                backdrop: 'static',
+                keyboard: false
+            });
+
+            modal.show();
+
+            document.getElementById("accFauna").value = "editar"
+            document.getElementById('saveFauna').removeAttribute('disabled')
+            document.getElementById('newFauna').style.display = 'none'
+            document.getElementById('cancelFauna').style.display = 'initial'
+
+            let url = "{{ route('fauna.buscaFauna') }}";
+
+            fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify({
+                        idFauna: idFauna
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    CKEDITOR.instances['contenidoFaunaList'].setData(data.contenido);
+                    document.getElementById("nombreFauna").value = data.nombre
+                    if (data.destacada == 1) {
+                        document.getElementById('faunaDestacado').checked = true;
+                    } else {
+                        document.getElementById('faunaDestacado').checked = false;
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+
+        }
+
+        function editFlora(idFlora) {
+            document.getElementById("idFlora").value = idFlora
+
+            var modal = new bootstrap.Modal(document.getElementById("modalFlora"), {
+                backdrop: 'static',
+                keyboard: false
+            });
+
+            modal.show();
+
+            document.getElementById("accFlora").value = "editar"
+            document.getElementById('saveFlora').removeAttribute('disabled')
+            document.getElementById('newFlora').style.display = 'none'
+            document.getElementById('cancelFlora').style.display = 'initial'
+
+            let url = "{{ route('flora.buscaFlora') }}";
+
+            fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify({
+                        idFlora: idFlora
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    CKEDITOR.instances['contenidoFloraList'].setData(data.contenido);
+                    document.getElementById("nombreFlora").value = data.nombre
+                    if (data.destacada == 1) {
+                        document.getElementById('floraDestacado').checked = true;
+                    } else {
+                        document.getElementById('floraDestacado').checked = false;
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+
+        }
+
         function editPersonaje(idPersonaje) {
             document.getElementById("idPersonajes").value = idPersonaje
 
@@ -2244,8 +2728,10 @@
                         .then(response => response.json())
                         .then(data => {
                             if (data.success) {
-                                swal("Eliminar!", "El registro ha sido eliminado.", "success");
-                                buscarLista('festividades', idDepartamento);
+                                swal("Eliminar!", data.message, "success");
+                                buscarLista('festividad', idDepartamento);
+                            } else {
+                                swal("Error!", data.message, "error");
                             }
                         })
                         .catch(error => console.error('Error:', error));
@@ -2288,6 +2774,90 @@
                             if (data.success) {
                                 swal("Eliminar!", "El registro ha sido eliminado.", "success");
                                 buscarLista('Sitios', idDepartamento);
+                            }
+                        })
+                        .catch(error => console.error('Error:', error));
+
+                } else {
+                    swal("Cancelado", "Tu registro esta salvo :)", "error");
+                }
+            });
+        }
+
+        function deleteFauna(idFauna) {
+            let idDepartamento = document.getElementById("idDepartamento").value;
+
+            swal({
+                title: "Esta seguro?",
+                text: "No podrás recuperar este registrto!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#fec801",
+                confirmButtonText: "Si, eliminar!",
+                cancelButtonText: "No, cancelar!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, function(isConfirm) {
+                if (isConfirm) {
+                    let url = "{{ route('fauna.eliminarFauna') }}";
+                    fetch(url, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                                    'content')
+                            },
+                            body: JSON.stringify({
+                                idFauna: idFauna
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                swal("Eliminar!", "El registro ha sido eliminado.", "success");
+                                buscarLista('fauna', idDepartamento);
+                            }
+                        })
+                        .catch(error => console.error('Error:', error));
+
+                } else {
+                    swal("Cancelado", "Tu registro esta salvo :)", "error");
+                }
+            });
+        }
+
+        function deleteFlora(idFlora) {
+            let idDepartamento = document.getElementById("idDepartamento").value;
+
+            swal({
+                title: "Esta seguro?",
+                text: "No podrás recuperar este registrto!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#fec801",
+                confirmButtonText: "Si, eliminar!",
+                cancelButtonText: "No, cancelar!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, function(isConfirm) {
+                if (isConfirm) {
+                    let url = "{{ route('flora.eliminarFlora') }}";
+                    fetch(url, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                                    'content')
+                            },
+                            body: JSON.stringify({
+                                idFlora: idFlora
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                swal("Eliminar!", "El registro ha sido eliminado.", "success");
+                                buscarLista('flora', idDepartamento);
                             }
                         })
                         .catch(error => console.error('Error:', error));
@@ -2428,66 +2998,68 @@
                         CKEDITOR.instances['contenidoEscudo'].setData(data.descripcion.escudo);
 
                         // Cargar historia
-                        if(data.historia){
-                        document.getElementById("idHistoria").value = data.historia.id;
-                        CKEDITOR.instances['contenidoHistoria'].setData(data.historia.historia);
+                        if (data.historia) {
+                            document.getElementById("idHistoria").value = data.historia.id;
+                            CKEDITOR.instances['contenidoHistoria'].setData(data.historia.historia);
                         }
                         //carga geografia
-                        if(data.geografia){
-                        document.getElementById("idGeografia").value = data.geografia.id;
-                        CKEDITOR.instances['contenidoUbicacion'].setData(data.geografia.ubicacion);
-                        CKEDITOR.instances['contenidoCoordenadas'].setData(data.geografia.coordenadas);
-                        CKEDITOR.instances['contenidoLimites'].setData(data.geografia.limites);
-                        CKEDITOR.instances['contenidoRelieve'].setData(data.geografia.relieve);
+                        if (data.geografia) {
+                            document.getElementById("idGeografia").value = data.geografia.id;
+                            CKEDITOR.instances['contenidoUbicacion'].setData(data.geografia.ubicacion);
+                            // CKEDITOR.instances['contenidoCoordenadas'].setData(data.geografia.coordenadas);
+                            //CKEDITOR.instances['contenidoLimites'].setData(data.geografia.limites);
+                            //CKEDITOR.instances['contenidoRelieve'].setData(data.geografia.relieve);
                         }
                         //carga hidrografica
-                        if(data.hidrografia){
-                        document.getElementById("idHidrografia").value = data.hidrografia.id;
-                        CKEDITOR.instances['contenidoHidrografia'].setData(data.hidrografia.hidrografia);
+                        if (data.hidrografia) {
+                            document.getElementById("idHidrografia").value = data.hidrografia.id;
+                            CKEDITOR.instances['contenidoHidrografia'].setData(data.hidrografia.hidrografia);
                         }
-                       
+
                         //carga clima
-                        if(data.clima){
-                        document.getElementById("idClima").value = data.clima.id;
-                        CKEDITOR.instances['contenidoClima'].setData(data.clima.clima);
+                        if (data.clima) {
+                            document.getElementById("idClima").value = data.clima.id;
+                            CKEDITOR.instances['contenidoClima'].setData(data.clima.clima);
                         }
                         //carga demografia
-                        if(data.demografia){
-                        document.getElementById("idDemografia").value = data.demografia.id;
-                        CKEDITOR.instances['contenidoPoblacion'].setData(data.demografia.poblacion);
-                        CKEDITOR.instances['contenidoDensidad'].setData(data.demografia.densidad);
-                        CKEDITOR.instances['contenidoSubregiones'].setData(data.demografia.subregiones);
+                        if (data.demografia) {
+                            document.getElementById("idDemografia").value = data.demografia.id;
+                            CKEDITOR.instances['contenidoPoblacion'].setData(data.demografia.poblacion);
+                            CKEDITOR.instances['contenidoDensidad'].setData(data.demografia.densidad);
+                            CKEDITOR.instances['contenidoSubregiones'].setData(data.demografia.subregiones);
                         }
                         //cargar etnografia
-                        if(data.etnografia){
-                        document.getElementById("idEtnografia").value = data.etnografia.id;
-                        CKEDITOR.instances['contenidoEtnoHistoria'].setData(data.etnografia.contenido);
+                        if (data.etnografia) {
+                            document.getElementById("idEtnografia").value = data.etnografia.id;
+                            CKEDITOR.instances['contenidoEtnoHistoria'].setData(data.etnografia.contenido);
                         }
                         buscarLista('etnografia', idDepartamento);
 
                         //cargar flora y fauna
-                        if(data.faunaFlora){
-                        document.getElementById("idFauFlora").value = data.faunaFlora.id;
-                        CKEDITOR.instances['contenidoFauna'].setData(data.faunaFlora.fauna);
-                        CKEDITOR.instances['contenidoFlora'].setData(data.faunaFlora.flora);
+                        if (data.faunaFlora) {
+                            document.getElementById("idFauFlora").value = data.faunaFlora.id;
+                            CKEDITOR.instances['contenidoFauna'].setData(data.faunaFlora.fauna);
+                            CKEDITOR.instances['contenidoFlora'].setData(data.faunaFlora.flora);
                         }
+                        buscarLista('fauna', idDepartamento);
+                        buscarLista('flora', idDepartamento);
                         //cargar economia
-                        if(data.economia){
-                        document.getElementById("idEconomia").value = data.economia.id;
-                        CKEDITOR.instances['contenidoEconomia'].setData(data.economia.economia);
+                        if (data.economia) {
+                            document.getElementById("idEconomia").value = data.economia.id;
+                            CKEDITOR.instances['contenidoEconomia'].setData(data.economia.economia);
                         }
                         //cargar cultura
-                        if(data.cultura){
-                        document.getElementById("idCultura").value = data.cultura.id;
-                        CKEDITOR.instances['contenidoCultura'].setData(data.cultura.descripcion);
-                        CKEDITOR.instances['contenidoArte'].setData(data.cultura.arte);
-                        CKEDITOR.instances['contenidoDanza'].setData(data.cultura.danza);
-                        CKEDITOR.instances['contenidoMusica'].setData(data.cultura.musica);
+                        if (data.cultura) {
+                            document.getElementById("idCultura").value = data.cultura.id;
+                            CKEDITOR.instances['contenidoCultura'].setData(data.cultura.descripcion);
+                            CKEDITOR.instances['contenidoArte'].setData(data.cultura.arte);
+                            CKEDITOR.instances['contenidoDanza'].setData(data.cultura.danza);
+                            CKEDITOR.instances['contenidoMusica'].setData(data.cultura.musica);
                         }
                         //cargar gastronomia
-                        if(data.gastronomia){
-                        document.getElementById("idGastronomia").value = data.gastronomia.id;
-                        CKEDITOR.instances['contenidoGastronomia'].setData(data.gastronomia.gastronomia);
+                        if (data.gastronomia) {
+                            document.getElementById("idGastronomia").value = data.gastronomia.id;
+                            CKEDITOR.instances['contenidoGastronomia'].setData(data.gastronomia.gastronomia);
                         }
                         //cargar festividades
                         buscarLista('festividad', idDepartamento);
@@ -2499,15 +3071,15 @@
                         buscarLista('personajes', idDepartamento);
 
                         //cargar capital
-                        if(data.capital){
-                        document.getElementById("idCapital").value = data.capital.id;
-                        CKEDITOR.instances['contenidoCapital'].setData(data.capital.capital);
+                        if (data.capital) {
+                            document.getElementById("idCapital").value = data.capital.id;
+                            CKEDITOR.instances['contenidoCapital'].setData(data.capital.capital);
                         }
                         //cargar referencia
-                        if(data.referencia){
-                        document.getElementById("idReferencia").value = data.referencia.id;
-                        CKEDITOR.instances['contenidoReferencia'].setData(data.referencia.referencia);
-                        CKEDITOR.instances['contenidoWebgrafia'].setData(data.referencia.webgrafia);
+                        if (data.referencia) {
+                            document.getElementById("idReferencia").value = data.referencia.id;
+                            CKEDITOR.instances['contenidoReferencia'].setData(data.referencia.referencia);
+                            CKEDITOR.instances['contenidoWebgrafia'].setData(data.referencia.webgrafia);
                         }
                         loadNow(0);
                     })
@@ -2538,6 +3110,10 @@
             tEtnias.innerHTML = '';
             //limpiar fauna y flora
             document.getElementById("idFauFlora").value = ''
+            const tFauna = document.querySelector('#tableFauna tbody')
+            tFauna.innerHTML = ''
+            const tFlora = document.querySelector('#tableFlora tbody')
+            tFlora.innerHTML = ''
             //limpiar economia
             document.getElementById("idEconomia").value = ''
             //limpiar cultura
@@ -2617,7 +3193,8 @@
                 keyboard: false
             });
             modal.show();
-            document.getElementById("tipoPreg").value = "";
+            cancelarPregunta()
+
             addOpcion();
         }
 
@@ -2687,10 +3264,11 @@
             opcion.remove();
         }
 
+
         function guardarPregunta() {
 
             const tipPreg = document.getElementById("tipoPreg");
-            console.log(tipPreg)
+
             if (tipPreg.value == 'multiple') {
                 let pregunta = document.getElementById('contPregunta').value.trim();
                 if (!pregunta) {
@@ -2700,6 +3278,7 @@
 
                     return;
                 }
+
 
                 // Validar que se ingresen al menos 2 opciones y que no estén vacías
                 let opciones = document.getElementsByName('textOpcionesPreg[]');
@@ -2734,7 +3313,7 @@
                         "warning");
                     return;
                 }
-            } else {
+            } else if (tipPreg.value == 'verfal') {
 
                 let pregunta = document.getElementById('preguntaVerfal').value.trim();
                 if (!pregunta) {
@@ -2762,6 +3341,11 @@
                     return;
                 }
 
+            } else {
+                swal("¡Alerta!",
+                    "Por favor, seleccione uyn tipo de pregunta.",
+                    "warning");
+                return;
             }
 
 
