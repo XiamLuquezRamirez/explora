@@ -138,22 +138,42 @@ class DepartamentoController extends Controller
                     } else {
                         $contenido = $item->contenido;
                     }
+                 
 
                     // Extraer todos los párrafos
                     $regexP = '/<p\b[^>]*>(.*?)<\/p>/i';
                     preg_match_all($regexP, $contenido, $parrafos);
 
-                    $primerParrafo = '';
-                    if (isset($parrafos[1])) {
+
+                    $parrafosHTML = ''; // Variable para acumular los párrafos procesados
+                    $contador = 0; // Contador para limitar a 2 párrafos
+                    
+                    if (!empty($parrafos[1]) && is_array($parrafos[1])) { // Verificamos que haya contenido
                         foreach ($parrafos[1] as $p) {
-                            // Eliminar etiquetas HTML internas y verificar si el párrafo no está vacío o solo tiene espacios
+                            // Limpiar el contenido y verificar que no esté vacío
                             $textoSinEtiquetas = strip_tags($p);
-                            if (trim($textoSinEtiquetas) !== '') {
-                                $primerParrafo = $p;
+                            $textoLimpio = trim(preg_replace('/\s+/', ' ', $textoSinEtiquetas)); // Quitar espacios extras
+                    
+                            if (!empty($textoLimpio)) { // Verificar que el párrafo no esté vacío
+                                $textoRecortado = substr($textoLimpio, 0, 200); // Recortar a 200 caracteres
+                                $parrafosHTML .= '<p>' . $textoRecortado . '...</p>'; // Añadir al resultado con puntos suspensivos
+                                $contador++;
+                            }
+                    
+                            // Detener el bucle después de procesar 2 párrafos
+                            if ($contador >= 2) {
                                 break;
                             }
                         }
                     }
+                    
+                    // Si no hay contenido válido, mostrar un mensaje predeterminado
+                    if (empty($parrafosHTML)) {
+                        $parrafosHTML = '<p>No hay descripción disponible.</p>';
+                    }
+                    
+
+                    
 
                     $tdTable .= '<div class="col-lg-6" onclick="mostrarInformacionDepartamento(' . $item->id . ')" style="cursor: pointer;">
                         <div class="card animated bounce">
@@ -164,7 +184,7 @@ class DepartamentoController extends Controller
                                 <div class="col-md-8">
                                     <div class="card-body">
                                         <h5 class="card-title fw-600">' . $item->nombre . ' - ' . $item->capital . '</h5>
-                                        <div style="text-align: justify;">' . $primerParrafo . '</div>
+                                        <div style="text-align: justify;">' .$parrafosHTML. '</div>
                                     </div>
                                 </div>
                             </div>

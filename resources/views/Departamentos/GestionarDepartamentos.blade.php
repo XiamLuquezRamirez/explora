@@ -145,6 +145,9 @@
                                                     <option value="seco">Clima seco</option>
                                                     <option value="templado">Clima templado</option>
                                                     <option value="montaña">Clima de montaña</option>
+                                                    <option value="tropical">Clima tropical</option>
+                                                    <option value="calido2">Clima calido</option>
+                                                    <option value="frio">Clima frio</option>
                                                 </select>
                                             </div>
                                         </div>
